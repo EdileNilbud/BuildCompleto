@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+	
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<link rel="icon" type="image/svg+xml" href="LOGOFAN.svg">
+		<meta name="generator" content="Astro v1.6.1">
+		<meta name="description">
+		<meta name="keywords" content="photo,art,pets">
+		<meta name="author" content="EliBlinVReveles">
+		<title>BienvenidoaFAN</title>
+
+
+
+		<link rel="stylesheet" href="/assets/Retratos.0a2143d5.css" /></head><nav class="navbar navbar-expand-lg bg-light; ">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="/">
+				  <img src="/LogoEBlanco.png" alt="Logo" width="40" height="40" class="d-inline-block align-text-top">
+				</a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				  </button>
+				  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+					<ul class="navbar-nav">
+					  <li class="nav-item">
+						<a class="nav-link" aria-current="page" href="/">Inicio</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="/#presentacion">Presentación</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" href="/#galeria">Galería</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" aria-current="page" href="/Retratos">Retratos</a>
+					  </li>
+					  <li class="nav-item">
+						<a class="nav-link" aria-current="page" href="/contacto">Contacto</a>
+					  </li>
+					
+					</ul>
+				  </div>
+			  </div>
+			
+		  </nav>
+
+	
+
+
+	
+		  
+
+		<main>
+		
+		<!-- SECCIÓN DE FORMULARIO DE CONTACTO  -->
+		<section class="container py-5">
+			<div class="row">
+				<div class="col-lg-6">
+					
+					<form action="/data" id="Formulario" method="get">
+						<div class="my-3">
+							<label for="Nombre">Nombre:</label>
+							<input type="text" name="nombre" class="form-control" id="Nombre" placeholder="Ingresa tu nombre" required>
+						</div>
+						<div class="my-3">
+							<label for="Correo">Correo:</label>
+							<input type="email" name="correo" class="form-control" id="Correo" placeholder="Enter email" required>
+						</div>
+						<div class="mb-3">
+							<label for="Tel">Telefono:</label>
+							<input type="tel" name="telefono" class="form-control" id="Tel" placeholder="Telefono (no es un campo obligatorio)">
+						</div>
+
+						<div class="mb-3">
+							<label for="Mensaje">Mensaje:</label>
+							<textarea name="mensaje" class="form-control" placeholder="Mensaje" id="Mensaje" required></textarea>
+						</div>
+
+						<button type="submit" class="boton" name="enviar">
+							Enviar
+						</button>
+					</form>
+				</div>
+			</div>
+		</section>
+
+		<!-- MODAL DE CONFIRMACIÓN -->
+		<div class="modal fade" id="modalFunciona" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">
+							Enviado correctamente
+						</h5>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body">A continuación se abrirá su aplicación de correo para envíar la información</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Entendido</button>						
+					</div>
+				</div>
+			</div>
+		</div>
+		
+	</main><script>
+		window.addEventListener("DOMContentLoaded", (event) => {
+			const formulario = document.getElementById("Formulario");
+			formulario.addEventListener("submit", (event) => {
+				event.preventDefault();
+
+				const formData = new FormData(formulario);
+				var data = {};
+				for (var pair of formData.entries()) {
+					data = {...data, [pair[0]] : pair[1]}    				
+  				}			
+
+				const referencia =
+					"mailto:fan.fotografiartisticanatural@gmail.com?subject=Quiero%20contactar%20con%20el%20artista&body=Nombre:%20" +
+					data.nombre +
+					"%0D%0ACorreo:%20" +
+					data.correo +
+					"%0D%0ATelefono:%20" +
+					data.tel +
+					"%0D%0AMensaje:%20" +
+					data.mensaje;
+
+				const enlace = document.createElement("a");
+				enlace.href = referencia;
+				enlace.click();
+
+				const modalConfirmacion = new bootstrap.Modal(document.getElementById("modalFunciona"), {});				
+				modalConfirmacion.show();
+			});
+		});
+	</script>
+		
+	    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+	
+	
+		<footer>
+			<div class="footer text-center text-light pt-5 pb-5">
+				<div class="row">
+				  <div class="col">
+					<p> Elide Dublín Vázquez Reveles </p>
+					<p>E-Mail: fan.fotografiartisticanatural@gmail.com</p>
+				  </div>
+				  <div class="col">
+					<h5> Redes Sociales</h5>
+				  </div>
+				  <div class="col">
+					Materia: Nuevas tendencias del Diseño Web Flexible.
+					Mtra. María José Hernández Reséndis
+				  </div>
+				</div>
+			  </div>
+		</footer>
+	
+
+
+
+</html>
